@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Paramount Bar (The Pmount) salina,Kansas </title>
+    <meta name="description" content="The Paramount Bar" (aka The Paramount )in salina, KS,since 1967! great food and drink!>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer></script>
+
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 100vw;
+            max-width: 100%;
+            min-height: 200vw;
+            font-family: "Merriweather", serif;
+            font-size: 16px;
+            background: #b8a581;
+        }
+        
+        @media screen and (min-width:768px) {
+            body {
+                font-size: 22px;
+            }
+        }
+        
+        @media screen and (min-width:1024px) {
+            body {
+                font-size: 22px;
+                background-image: url("./img/idil.JPG");
+                background-attachment: fixed;
+            }
+        }
+        
+        img {
+            display: block;
+        }
+        
+        a,
+        a:visited {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            opacity: 0.8;
+        }
+        
+        .bold {
+            font-weight: bold;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .dark {
+            background: #333;
+            color: #fff;
+        }
+        
+        .maxwidh {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            align-items: flex-end;
+            height: 50px;
+            box-shadow: 2px 0 5px #333;
+        }
+        
+        h1 {
+            font-size: 1.75rem;
+        }
+        
+        .bar {
+            display: none;
+        }
+        
+        @media screen and (min-width: 768) {
+            .header {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+        
+        .nav {
+            display: block;
+            position: relative;
+        }
+        
+        .nav_burger-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+            margin: 0 10px;
+        }
+        
+        .nav_burger,
+        .nav_burger::before .nav_burger::after {
+            opacity: 1;
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            border-radius: 5px;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .nav_burger::before,
+        .nav_burger::after {
+            content: "";
+            position: absolute;
+        }
+        
+        .nav_burger::before {
+            transform: translateY(-8px);
+        }
+        
+        .nav_burger::after {
+            transform: translateY(+8px);
+        }
+        
+        .nav_burger-btn.open .nav_burger {
+            background: transparent;
+        }
+        
+        .nav_burger-btn.open .nav_burger::before {
+            background: transparent;
+            color: #ff0000;
+            transform: rotate(45deg);
+        }
+        
+        .nav_burger-btn.open .nav_burger::after {
+            background: transparent;
+            color: #ff0000;
+            transform: rotate(-45deg);
+        }
+        
+        .nav__list {
+            position: absolute;
+            top: 50;
+            left: 0;
+            display: none;
+            width: 100vw;
+            padding-left: 10px;
+            list-style-type: none;
+            background: #333;
+            animation: showMenu 0.5s ease-in-out forwards;
+            transform-origin: top center;
+        }
+        
+        @keyframes showMenu {
+            0% {
+                transform: scaleY(0);
+            }
+            80% {
+                transform: scaleY(1.2);
+            }
+            100% {
+                transform: scaleY(1);
+            }
+        }
+        
+        .nav__item {
+            display: block;
+            font-size: 1.75rem;
+            padding: 20px;
+        }
+        
+        .nav__list.open {
+            display: block;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .nav__burger-btn {
+                display: none;
+            }
+            .nav__list {
+                position: relative;
+                display: block;
+                width: 100%;
+                padding: 0;
+                animation: none;
+            }
+            .nav__item {
+                display: inline-block;
+                font-size: 0.85rem;
+                margin-right: 10px;
+                padding: 0;
+            }
+        }
+        
+        h1 {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            background: #fff;
+            margin: 10px 0 20px;
+            border: 1px solid #333;
+        }
+        
+        .menu {
+            max-width: 800px;
+            margin: 0 auto;
+            background: oldlace;
+            border: 1px solid #333;
+            box-shadow: 2px 2px 10px #333;
+            padding: 0 10px 20px;
+        }
+        
+        .menu__section {
+            scroll-margin-top: 60px;
+            margin: 10px auto 0;
+        }
+        
+        .menu__items-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .menu__item {
+            font-family: "Black Han Sons", sans-serif;
+            font-size: 1.65rem;
+            margin-top: 20px;
+        }
+        
+        .menu__item:first-child {
+            margin-top: 0;
+        }
+        
+        .menu__price {
+            color: #52a143;
+        }
+        
+        .menu__description {
+            margin: 5px 0 10px 10px;
+            font-family: "Merriweather", serif;
+            font-style: italic;
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+        
+        .menu__food_image {
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .menu-caption {
+            font-size: 1rem;
+            padding: 5px;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+        
+        @media screen and (min-width: 768) {
+            .menu {
+                background: rgba(253, 245, 230, 0.9);
+            }
+            .menu__items-container {
+                flex-direction: 10px;
+                flex-wrap: wrap;
+            }
+            .menu__items-container>div {
+                width: 45%;
+                flex-grow: 1;
+            }
+            .menu__items-container>div:nth-child(odd) {
+                margin: right 10px;
+            }
+            .menu__food-image {
+                border-radius: 25px 25px 0 0;
+            }
+            .menu__caption {
+                border-radius: 0 0 25px;
+            }
+        }
+        
+        .footer {
+            padding: 10px;
+            font-size: 1rem;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 2px 0 5px #333;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <header class="header dark maxwidh">
+        <h1><a href="/">The Paramount <span class="bar"> Bar</span></a></h1>
+        <nav class="nav">
+            <div class="nav__burger-btn">
+                <div class="nav__burger"></div>
+            </div>
+            <ul class="nav__list">
+                <li class="nav__item center"><a href="#appetizers">Appetizers</a></li>
+                <li class="nav__item center"><a href="#baskets_salads">Baskets &amp; salads</a></li>
+                <li class="nav__item center"><a href="#sandwiches">Sandwiches</a></li>
+                <li class="nav__item center"><a href="#buns">Buns</a></li>
+
+            </ul>
+
+        </nav>
+    </header>
+    <main id="menu" class="menu">
+        <section id="Appetizers" class="menu__section">
+            <h2 class="center">Appetizers</h2>
+            <div class="menu__items-container"></div>
+            <div>
+                <div class="menu__item">WINGS <span class="menu__price">$1 each</span></div>
+                <div class="menu__item">FRIED FISH <span class="menu__price">$6 each</span></div>
+                <div class="menu__item">CORN &amp; UN REACH <span class="menu__price">$6 each</span></div>
+                <div class="menu__item">CHEESE CAW <span class="menu__price">$6 each</span></div>
+                <div class="menu__item">VEGETABLE <span class="menu__price">$6 each</span></div>
+            </div>
+            <div>
+                <figure>
+                    <img class="menu__food-image" src="img/vegetable.jpg.jpg" alt="VEGETABLE">
+                    <figcaption class="menu_caption dar center"> VEGETABLE &amp; </figcaption>
+                </figure>
+            </div>
+            <div>
+                <div class="menu__item">BASKET OF FRIED <span class="menu__price">$4</span></div>
+                <div class="menu__item">FRIED GREEN BEANS <span class="menu__price">$6</span></div>
+                <div class="menu__item">MUSHROOMS <span class="menu__price">$6</span></div>
+                <div class="menu__item">STEAK BITES <span class="menu__price">$7</span></div>
+                <div class="menu__item">CHIPS &amp; <span class="menu__price">$7</span></div>
+                <p class="menu__description ">
+                    <span class="bold">Note</span>All fried items are fried in peanut oil.
+                </p>
+                <div>
+                    <p class="menu__description ">
+                        <span class="bold">Note</span>All fried items are fried in peanut oil.halakan wan waxaan ku haynaa cunto dheeli tiran waxayna isugu jirtaa noocyada vitamiinadada sida.
+                        <ul>
+                            <li>VITAMIN <b>A</b></li>
+                            <li>VITAMIN <b>B</b></li>
+                            <li>VITAMIN <b>C</b></li>
+                            <li>VITAMIN <b>D</b></li>
+                            <li>VITAMIN <b>E</b></li>
+                            <li>VITAMIN <b>K</b></li>
+
+
+
+                        </ul>
+                    </p>
+                    <figure>
+                        <img class="menu__food-image" src="img/vegetable.jpg.jpg" alt="VEGETABLE">
+                        <figcaption class="menu_caption dar center"> sandwich &amp; </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div>
+                <p class="menu__description ">
+                    <span class="bold">Note</span>All fried items are fried in peanut oil. halakan wan waxaan ku haynaa cunto dheeli tiran waxayna isugu jirtaa noocyada vitamiinadada sida.
+                    <ul>
+                        <li>VITAMIN <b>A</b></li>
+                        <li>VITAMIN <b>B</b></li>
+                        <li>VITAMIN <b>C</b></li>
+                        <li>VITAMIN <b>D</b></li>
+                        <li>VITAMIN <b>E</b></li>
+                        <li>VITAMIN <b>K</b></li>
+                        <li>VITAMIN <b>K</b></li>
+
+
+
+
+                    </ul>
+                </p>
+                <figure>
+                    <img class="menu__food-image" src="img/salad.jpeg" alt="VEGETABLE">
+                    <figcaption class="menu_caption dar center"> SALAD &amp; </figcaption>
+                </figure>
+            </div>
+            <div>
+                <p class="menu__description ">
+                    <span class="bold">Note</span>All fried items are fried in peanut oil. halakan wan waxaan ku haynaa cunto dheeli tiran waxayna isugu jirtaa noocyada vitamiinadada sida.
+                    <ul>
+                        <li>VITAMIN <b>A</b></li>
+                        <li>VITAMIN <b>B</b></li>
+                        <li>VITAMIN <b>C</b></li>
+                        <li>VITAMIN <b>D</b></li>
+                        <li>VITAMIN <b>E</b></li>
+                        <li>VITAMIN <b>K</b></li>
+
+                    </ul>
+                </p>
+                <figure>
+                    <img class="menu__food-image" src="img/fish.jpg.jpeg" alt="VEGETABLE">
+                    <figcaption class="menu_caption dar center"> FISH &amp; </figcaption>
+                </figure>
+            </div>
+            <div>
+                <p class="menu__description ">
+                    <span class="bold">Note</span>All fried items are fried in peanut oil.halakan wan waxaan ku haynaa cunto dheeli tiran waxayna isugu jirtaa noocyada vitamiinadada sida.
+                    <ul>
+                        <li>VITAMIN <b>A</b></li>
+                        <li>VITAMIN <b>B</b></li>
+                        <li>VITAMIN <b>C</b></li>
+                        <li>VITAMIN <b>D</b></li>
+                        <li>VITAMIN <b>E</b></li>
+                        <li>VITAMIN <b>K</b></li>
+
+                    </ul>
+                </p>
+                <figure>
+                    <img class="menu__food-image" src="img/burger.jpg.jpeg" alt="VEGETABLE">
+                    <figcaption class="menu_caption dar center"> BURGER &amp; </figcaption>
+                </figure>
+            </div>
+            <p class="menu__description ">
+                <span class="bold">Note</span>All fried items are fried in peanut oil.halakan wan waxaan ku haynaa cunto dheeli tiran waxayna isugu jirtaa noocyada vitamiinadada sida.
+                <ul>
+                    <li>VITAMIN <b>A</b></li>
+                    <li>VITAMIN <b>B</b></li>
+                    <li>VITAMIN <b>C</b></li>
+                    <li>VITAMIN <b>D</b></li>
+                    <li>VITAMIN <b>E</b></li>
+                    <li>VITAMIN <b>K</b></li>
+
+                </ul>
+            </p>
+            <figure>
+                <img class="menu__food-image" src="img/bricks.jpg" alt="VEGETABLE">
+                <figcaption class="menu_caption dar center">BRICKS &amp; </figcaption>
+            </figure>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer-dark maxwidh">
+        <p>Mon-sat 11-9</p>
+        <p><a href="tel:+251910485112">+251910485112</a></p>
+        <p>&amp; <span id="year">The Paramount Bar</span></p>
+        <p class="container"> gali caalamada imoji
+            <a href="gali google map"></a>219 N.santa fe Ave.<br>Salina, KS 67401</p>
+
+    </footer>
+
+</body>
+
+</html>
